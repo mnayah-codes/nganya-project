@@ -1,0 +1,84 @@
+.stunt-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+  margin-top: 0px;
+}
+
+/* Video background */
+.stunt-video-container {
+  position: absolute;
+  /*top: 0;
+  left: 0;*/
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.stunt-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Full dark overlay */
+.stunt-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hero Content */
+.stunt-content {
+  text-align: center;
+  color: white;
+  padding: 30px;
+  animation: riseUp 1.2s ease-in-out;
+}
+
+.stunt-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ffcc00;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.stunt-subtitle {
+  font-size: 1.2rem;
+  color: #ddd;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Animations */
+@keyframes riseUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .stunt-title {
+    font-size: 2.4rem;
+  }
+
+  .stunt-subtitle {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+}

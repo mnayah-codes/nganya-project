@@ -1,0 +1,131 @@
+/* Gallery Hero Container */
+.gallery-hero {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+  background: #101010;
+  color: white;
+}
+
+/* Header Overlay */
+.gallery-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  text-align: center;
+  z-index: 5;
+  opacity: 0;
+  animation: overlayIntro 1.2s ease-out forwards;
+}
+
+.overlay-title {
+  font-size: 4rem;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.overlay-subtitle {
+  font-size: 1.4rem;
+  margin-top: 10px;
+  color: #f0f0f0;
+}
+
+/* Image Panel Container */
+.gallery-panels {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Each Frame */
+.gallery-frame {
+  position: relative;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: zoomReveal 1s ease-out forwards;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Staggered Animation */
+.frame-0 {
+  animation-delay: 0.4s;
+}
+.frame-1 {
+  animation-delay: 1s;
+}
+
+/* Zoom + Fade Animation */
+@keyframes zoomReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Dark Tint Overlay */
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Image Styling */
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: skewX(0deg);
+  filter: brightness(70%);
+  display: block;
+  position: relative;
+  z-index: 0;
+}
+
+/* Overlay Entrance Animation */
+@keyframes overlayIntro {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Hover Glow */
+.gallery-frame:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.8);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .gallery-panels {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 12px;
+  }
+
+  .gallery-frame {
+    width: 100%;
+    height: 45vh;
+  }
+
+  .overlay-title {
+    font-size: 3.0rem;
+  }
+
+  .overlay-subtitle {
+    font-size: 1.4rem;
+  }
+}

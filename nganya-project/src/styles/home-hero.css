@@ -1,0 +1,99 @@
+.home-hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  color: white;
+}
+
+.hero-panels {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+}
+
+.panel {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
+  z-index: 1;
+}
+
+
+.panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  animation: zoomFade 10s ease-in-out infinite;
+}
+
+/* Custom slanted clip paths */
+.panel-0 {
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+.panel-1 {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+.panel-2 {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Overlay in each panel */
+.panel-overlay {
+  position: relative;
+  bottom: 15px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+/* Central overlay text */
+.home-hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+}
+
+.home-hero-overlay h1 {
+  font-size: 3.5rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+.home-hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-panels {
+    flex-direction: column;
+  }
+
+  .panel {
+    clip-path: none !important;
+    height: 33.33%;
+  }
+
+  .home-hero-overlay h1 {
+    font-size: 2rem;
+  }
+}

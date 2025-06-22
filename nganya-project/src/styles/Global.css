@@ -1,0 +1,11 @@
+body {
+  min-height: 100vh;
+  font-family: "Poppins", Sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #0A0A0A, #1A1A1A, #1A1A1A, #0A0A0A);
+  color: white;
+}
+:root {
+  scroll-behavior: smooth;
+}

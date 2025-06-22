@@ -1,0 +1,112 @@
+.nav-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  background: #000;
+  box-shadow: 0 0 10px #ffcc00;
+  border-bottom: 2px solid #ffcc00;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  position: relative;
+  background: rgba(255, 204, 0, 0.05);
+  transition: 0.3s ease-in-out;
+}
+
+/* Glowing dotted active style */
+.nav-link.active {
+  color: #ffcc00;
+  background: rgba(255, 204, 0, 0.1);
+  border: 2px dotted #ffcc00;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+  animation: borderPulse 1.8s infinite;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px #ffcc00, 0 0 16px #ffcc00;
+  }
+  50% {
+    box-shadow: 0 0 14px #ffcc00, 0 0 28px #ffcc00;
+  }
+}
+
+/* Hover interaction */
+.nav-link:hover {
+  color: #000;
+  background: #ffcc00;
+  text-shadow: none;
+}
+
+/* Glowing underline (optional flare) */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.nav-link.active::after {
+  background: #ffcc00;
+  box-shadow: 0 0 6px #ffcc00, 0 0 12px #ffcc00;
+}
+
+/* Hamburger menu toggle */
+.menu-toggle {
+  display: block;
+  font-size: 32px;
+  cursor: pointer;
+  color: #ffcc00;
+  margin-left: auto;
+  margin-top: 8px;
+  z-index: 5;
+}
+
+/* Responsive dropdown */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background: #111;
+    padding: 15px;
+    border: 2px dotted #ffcc00;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #ffcc00;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+  }
+}

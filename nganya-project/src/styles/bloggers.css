@@ -1,0 +1,82 @@
+.blogger-section{
+  margin-top: 70px;
+}
+.blogger-description{
+  font-size: 1.2em;
+}
+.blogger-columns {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  animation: stageVibe 5s infinite alternate ease-in-out;
+}
+
+.platform-section {
+  flex: 1;
+  padding: 24px;
+  background: #000;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.blogger-card {
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px dashed transparent;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  transition: 0.3s ease;
+  position: relative;
+  animation: popIn 0.6s ease-out;
+}
+
+.blogger-card:hover {
+  transform: scale(1.08) rotate(-1deg);
+  border-color: #ffcc00;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+/* Emoji Spark Flicker */
+.platform-section h3::after {
+  content: "✨";
+  animation: flicker 1s infinite alternate;
+}
+
+/* Divider Line */
+.blogger-columns::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #ffcc00, #ff0050);
+  left: 50%;
+  transform: translateX(-50%);
+  animation: glowScroll 6s linear infinite;
+}
+
+/* Keyframes */
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes glowScroll {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+@keyframes flicker {
+  from { opacity: 0.5; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes stageVibe {
+  0% { gap: 60px; }
+  100% { gap: 72px; }
+}

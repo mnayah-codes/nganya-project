@@ -1,0 +1,117 @@
+h2 {
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.gallery-title {
+  color: #e78f22;
+  margin-top: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+}
+@media screen and (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 image per row */
+  }
+}
+
+.card {
+  background: #222;
+  padding: 15px;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  opacity:0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+.card img:hover{
+  transform: scale(1.05);
+}
+
+.image-container {
+  position: relative;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px; /* Make the arrows large */
+  color: white; /* Make them visible */
+  cursor: pointer;
+  opacity: 0.7; /* Slight transparency */
+}
+
+.arrow:hover {
+  opacity: 1; /* Full visibility on hover */
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.card h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: white; 
+}
+
+.location-title {
+  color: #05bdd6;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.0s ease-out, transform 1.0s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}

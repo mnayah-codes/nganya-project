@@ -1,0 +1,44 @@
+.drivers-title{
+  color: #ffcc00;
+  font-size: 35px;
+  text-align: center;
+}
+.drivers-title-description{
+  text-align: center;
+  font-size: 20px;
+}
+.driver-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  justify-content: center;
+  color: white;
+  background-image: url("../assets/background-1.jpg");
+  background-position: cover;
+  background-repeat: repeat;
+  padding: 40px;
+  
+
+}
+
+.driver-card {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.driver-image {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+.driver-image-container{
+  margin-top: -30px;
+}
+
+.rating {
+  color: gold;
+  font-size: 1.2em;
+}
